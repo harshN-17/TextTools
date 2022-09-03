@@ -14,6 +14,7 @@ export default function Textarea(props) {
     }
 
     const calcSpeed = () => {
+        console.log("Adf");
         let words = text.trim().split(" ");
         let cnt = 0;
         words.forEach(element => {
@@ -27,11 +28,15 @@ export default function Textarea(props) {
     
     const capitalise = () => {
         let newText = "";
+        console.log("asdf");                
         let sents = text.trim().split(".");
         sents.forEach(element=>{
-            newText = newText + element.trim().charAt(0).toUpperCase() + element.slice(1).trim() + ". ";
+            // newText = newText + element.trim().charAt(0).toUpperCase() + element.trim().substring(1) + ". ";
+            newText = newText + element.trim().charAt(0).toUpperCase() + element.trim().slice(1) + ". ";
+            console.log('a' + element.trim() + 'a');
+            
         });
-        setText(newText.trim("."));
+        setText(newText.trim());
     }
 
     const [text, setText] = useState("Paste your text here..")
